@@ -65,7 +65,7 @@
 			});
 
 			$("#removeBtn").click(function () {
-				var codigo = $("#matricula").val();
+				var matricula = $("#matricula").val();
 				db.transaction(["empregados"], "readwrite").objectStore("empregados").delete(matricula);
 				transaction.oncomplete = function (event) {
 					$("#result").html("Removido");
