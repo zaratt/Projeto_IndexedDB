@@ -160,13 +160,13 @@ $(document).ready(function () {
         // Criação de variável para incrementar e contabilizar os erros ----------------
         var contErro = 0;
 
-        // Declaração das variáveis dos inputs dos COMPONENTES-------------------------
+        // Declaração das variáveis dos inputs-------------------------
         var matricula = document.getElementById('matricula');
         var nome = document.getElementById('nome');
         var coordenacao = document.getElementById('coordenacao');
         var unidade = document.getElementById('unidade');
 
-        // Declaração das variáveis do span dos COMPONENTES------------------------------
+        // Declaração das variáveis do span de erro------------------------------
         var msg_matricula = document.querySelector('.msg-matricula');
         var msg_nome = document.querySelector('.msg-nome');
         var msg_coordenacao = document.querySelector('.msg-coordenacao');
