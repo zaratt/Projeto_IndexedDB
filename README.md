@@ -1,3 +1,5 @@
-# Working With IndexedDB - Part 2 Source Code
+# Projeto de cadastro de empregado
 
-Source code for the Nettuts+ article "Working With IndexedDB - Part 2" by Raymond Camden.
+Pequeno projeto de cadastro de empregados, salvando os dados no INDEXEDDB
+
+Layout: baseado no Bootstrap 5
