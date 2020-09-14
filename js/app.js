@@ -156,6 +156,69 @@ $(document).ready(function () {
 
     $("#saveButton").on("click", function () {
 
+
+        // Criação de variável para incrementar e contabilizar os erros ----------------
+        var contErro = 0;
+
+        // Declaração das variáveis dos inputs dos COMPONENTES-------------------------
+        var matricula = document.getElementById('matricula');
+        var nome = document.getElementById('nome');
+        var coordenacao = document.getElementById('coordenacao');
+        var unidade = document.getElementById('unidade');
+
+        // Declaração das variáveis do span dos COMPONENTES------------------------------
+        var msg_matricula = document.querySelector('.msg-matricula');
+        var msg_nome = document.querySelector('.msg-nome');
+        var msg_coordenacao = document.querySelector('.msg-coordenacao');
+        var msg_unidade = document.querySelector('.msg-unidade');
+
+
+        // Validação do campo matricula ---------------------------------------------------
+        if(matricula.value == ""){
+            msg_matricula.innerHTML = "Favor informar matricula";
+            msg_matricula.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        }else{
+            msg_matricula.style.display = 'none';
+        }
+
+        
+        // Validação do campo nome ------------------------------------
+        if(nome.value == ""){
+            msg_nome.innerHTML = "Favor preencher seu nome";
+            msg_nome.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        }else{
+            msg_nome.style.display = 'none';
+        }
+
+        // Validação do campo coordenacao ------------------------------------
+        if(coordenacao.value == ""){
+            msg_coordenacao.innerHTML = "Favor preencher a coordenacao";
+            msg_coordenacao.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        }else{
+            msg_coordenacao.style.display = 'none';
+        }
+        
+
+        // Validação do campo unidade ------------------------------------------
+        if(unidade.value == ""){
+            msg_unidade.innerHTML = "Favor preencher a unidade";
+            msg_unidade.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        }else{
+            msg_unidade.style.display = 'none';
+        }
+
+
+        // Verifica os erros incrementados ---------------------------
+        if(contErro > 0){ // Se for maior que zero, não envia o formulário
+            evt.preventDefault();
+        }
+
+
+
         var matricula = $("#matricula").val();
         var nome = $("#nome").val();
         var coordenacao = $("#coordenacao").val();
@@ -186,4 +249,10 @@ $(document).ready(function () {
     });
 
 });
+
+
+
+
+
+
 

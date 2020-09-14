@@ -9,3 +9,34 @@ body {
 #noteForm {
 	display: none;
 }
+
+
+
+
+/* .error{
+  display: block;
+  height: 50px
+} */
+
+.msg-erro{
+  color: #fff;
+  font-size: 15px;
+  color: red;
+  text-transform: none;
+  font-weight: normal;
+  display: none;
+
+}
+
+/* .msg-erro:before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  color: red;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  top: -9px;
+  left: 45%;
+  -webkit-transform:rotate(-45deg);
+} */
