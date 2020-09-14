@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Empregados</title>
+
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Cadastro de Empregados</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div id="noteList"></div>
+		<div class="pull-right"><button id="addButton" class="btn btn-success">Adicionar Empregado</button></div>
+		<div id="noteDetail"></div>
+
+		<div id="noteForm">
+			<h2>EMPREGADO</h2>
+			<form role="form" class="form-horizontal">
+				<input type="hidden" id="key">
+				<div class="form-group">
+					<label for="matricula" class="col-lg-2 control-label">Matrícula</label>
+					<div class="col-lg-10">
+						<input type="text" id="matricula" class="form-control" value="" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="nome" class="col-lg-2 control-label">Nome do Empregado</label>
+					<div class="col-lg-10">
+						<input type="text" id="nome" required class="form-control" maxlength="100" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="coordenacao" class="col-lg-2 control-label">Coordenação</label>
+					<div class="col-lg-10">
+						<input type="text" id="coordenacao" required class="form-control" maxlength="100" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="unidade" class="col-lg-2 control-label">Unidade</label>
+					<div class="col-lg-10">
+						<input type="number" id="unidade" required class="form-control" maxlength="4" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-10">
+						<button id="saveButton" class="btn btn-default">Salvar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>
