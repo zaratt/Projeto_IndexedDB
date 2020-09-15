@@ -40,9 +40,9 @@ $(document).ready(function () {
         var thisDb = e.target.result;
         var objectStore;
 
-        //Create Note OS
+        //Criando o Object Store
         if (!thisDb.objectStoreNames.contains("note")) {
-            console.log("I need to make the note objectstore");
+            console.log("Necessário criar o object store");
             objectStore = thisDb.createObjectStore("note", { keyPath: "id", autoIncrement: true });
         }
 
@@ -129,6 +129,16 @@ $(document).ready(function () {
         return false;
     });
 
+    /* Limpar Formulário*/
+    $("#cleanBtn").click(function () {
+        var matricula = $("#matricula").val("");
+        var nome = $("#nome").val("");
+        var coordenacao = $("#coordenacao").val("");
+        var unidade = $("#unidade").val("");
+
+    });
+
+
     /* Exibir dados ao clicar no empregado*/
     $("#noteList").on("click", "td", function () {
         var thisId = $(this).parent().data("key");
@@ -155,6 +165,69 @@ $(document).ready(function () {
     });
 
     $("#saveButton").on("click", function () {
+
+
+        // Criação de variável para incrementar e contabilizar os erros ----------------
+        var contErro = 0;
+
+        // Declaração das variáveis dos inputs-------------------------
+        var matricula = document.getElementById('matricula');
+        var nome = document.getElementById('nome');
+        var coordenacao = document.getElementById('coordenacao');
+        var unidade = document.getElementById('unidade');
+
+        // Declaração das variáveis do span de erro------------------------------
+        var msg_matricula = document.querySelector('.msg-matricula');
+        var msg_nome = document.querySelector('.msg-nome');
+        var msg_coordenacao = document.querySelector('.msg-coordenacao');
+        var msg_unidade = document.querySelector('.msg-unidade');
+
+
+        // Validação do campo matricula ---------------------------------------------------
+        if (matricula.value == "") {
+            msg_matricula.innerHTML = "Favor informar matrícula";
+            msg_matricula.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        } else {
+            msg_matricula.style.display = 'none';
+        }
+
+
+        // Validação do campo nome ------------------------------------
+        if (nome.value == "") {
+            msg_nome.innerHTML = "Favor preencher o nome do empregado";
+            msg_nome.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        } else {
+            msg_nome.style.display = 'none';
+        }
+
+        // Validação do campo coordenacao ------------------------------------
+        if (coordenacao.value == "") {
+            msg_coordenacao.innerHTML = "Favor preencher a coordenação";
+            msg_coordenacao.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        } else {
+            msg_coordenacao.style.display = 'none';
+        }
+
+
+        // Validação do campo unidade ------------------------------------------
+        if (unidade.value == "") {
+            msg_unidade.innerHTML = "Favor preencher a unidade corretamente";
+            msg_unidade.style.display = 'inline-block';
+            contErro += 1; //incrementa o erro
+        } else {
+            msg_unidade.style.display = 'none';
+        }
+
+
+        // Verifica os erros incrementados ---------------------------
+        if (contErro > 0) { // Se for maior que zero, não envia o formulário
+            evt.preventDefault();
+        }
+
+
 
         var matricula = $("#matricula").val();
         var nome = $("#nome").val();
@@ -186,4 +259,10 @@ $(document).ready(function () {
     });
 
 });
+
+
+
+
+
+
 
