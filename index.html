@@ -36,7 +36,7 @@
 				<div class="form-group">
 					<label for="matricula" class="col-lg-2 control-label">Matrícula</label>
 					<div class="col-lg-10">
-						<input type="text" id="matricula" class="form-control" pattern="[c-C]{0-9}"
+						<input type="text" id="matricula" class="form-control" pattern="C+([0-9]{6})$"
 							title="A matrícula deve seguir um padrão. Exemplo: C000000" maxlength="7" required>
 						<span class='msg-erro msg-matricula' id="error"></span>
 					</div>
