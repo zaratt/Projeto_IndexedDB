@@ -64,7 +64,7 @@
 				<div class="form-group">
 					<label for="unidade" class="col-lg-2 control-label">Unidade</label>
 					<div class="col-lg-10">
-						<input type="text" id="unidade" class="form-control" pattern="[0-9].{4},"
+						<input type="text" id="unidade" class="form-control" min="4" pattern="[0-9]{4}"
 							title="A unidade são 4 dígitos numéricos. Exemplo: 1234" maxlength="4" required>
 						<span class='msg-erro msg-unidade' id="error"></span>
 					</div>
